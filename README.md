@@ -1,2 +1,2 @@
-# Fellows
+# Money
 Global Currency Converter
