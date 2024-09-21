@@ -8,3 +8,6 @@ https://ahmedrafat23.github.io/Bullion/
 
 ![2024-09-19](https://github.com/user-attachments/assets/20865a82-3a5e-42c1-b20d-f0cc6f01f30f)
 
+![2024-09-21](https://github.com/user-attachments/assets/e8bb39fe-860f-4883-b08a-0c0d31b3ce19)
+
+
