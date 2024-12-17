@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BULLION Mock-Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #2d3748;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .section-title {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: #2d3748;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .card-title {
+            font-size: 1.2rem;
+            color: #444;
+            margin-bottom: 10px;
+        }
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2c5282;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #2d3748;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BULLION: Real-Time Metal & Currency Dashboard</h1>
+    </header>
+
+    <div class="container">
+        <!-- Gold & Silver Prices Section -->
+        <section>
+            <div class="section-title">Precious Metal Prices</div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-title">Gold</div>
+                    <div class="price">$1,920.45</div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Silver</div>
+                    <div class="price">$24.15</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Currency Exchange Rates Section -->
+        <section>
+            <div class="section-title">Currency Exchange Rates</div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-title">USD to EUR</div>
+                    <div class="price">0.91</div>
+                </div>
+                <div class="card">
+                    <div class="card-title">USD to GBP</div>
+                    <div class="price">0.79</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Powered by Real-Time Data APIs | BULLION &copy; 2024</p>
+    </footer>
+</body>
+</html>
+
