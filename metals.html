@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Metals Prices</h1>
+<div id="metals">
+    <p>Loading...</p>
+</div>
+<script>
+    async function fetchMetals() {
+        const response = await fetch('/get-metals');
+        const data = await response.json();
+        if (data.error) {
+            document.getElementById('metals').innerText = `Error: ${data.error}`;
+        } else {
+            document.getElementById('metals').innerHTML = `
+                <p><strong>Gold (XAU):</strong> ${data.XAU}</p>
+                <p><strong>Silver (XAG):</strong> ${data.XAG}</p>
+            `;
+        }
+    }
+    fetchMetals();
+</script>
+{% endblock %}
+
