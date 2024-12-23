@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Currency Exchange Rates</h1>
+<div id="currencies">
+    <p>Loading...</p>
+</div>
+<script>
+    async function fetchCurrencies() {
+        const response = await fetch('/get-currencies');
+        const data = await response.json();
+        if (data.error) {
+            document.getElementById('currencies').innerText = `Error: ${data.error}`;
+        } else {
+            let rates = '';
+            for (const [currency, rate] of Object.entries(data)) {
+                rates += `<p><strong>${currency}:</strong> ${rate}</p>`;
+            }
+            document.getElementById('currencies').innerHTML = rates;
+        }
+    }
+    fetchCurrencies();
+</script>
+{% endblock %}
+
