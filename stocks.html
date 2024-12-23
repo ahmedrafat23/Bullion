@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Stock Prices</h1>
+<div id="stocks">
+    <p>Loading...</p>
+</div>
+<script>
+    async function fetchStocks() {
+        const response = await fetch('/get-stocks');
+        const data = await response.json();
+        if (data.error) {
+            document.getElementById('stocks').innerText = `Error: ${data.error}`;
+        } else {
+            let stocks = '';
+            for (const [company, price] of Object.entries(data)) {
+                stocks += `<p><strong>${company}:</strong> ${price}</p>`;
+            }
+            document.getElementById('stocks').innerHTML = stocks;
+        }
+    }
+    fetchStocks();
+</script>
+{% endblock %}
+
