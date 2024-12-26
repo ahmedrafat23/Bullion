@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Metals Prices</h1>
+<div id="metals-data">
+    <!-- JavaScript will populate this section with live data -->
+</div>
+<script>
+    fetch('/get-metals')
+        .then(response => response.json())
+        .then(data => {
+            const metalsDiv = document.getElementById('metals-data');
+            metalsDiv.innerHTML = JSON.stringify(data, null, 2);
+        })
+        .catch(error => console.error('Error fetching metals data:', error));
+</script>
+{% endblock %}
+
