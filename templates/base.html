@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Bullion App{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Bullion App</title>
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
     <nav>
@@ -15,9 +15,12 @@
             <li><a href="/stocks">Stocks</a></li>
         </ul>
     </nav>
-    <div class="content">
+    <main>
         {% block content %}{% endblock %}
-    </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Bullion App</p>
+    </footer>
 </body>
 </html>
 
