@@ -1,24 +1,26 @@
-{% extends "base.html" %}
-
-{% block content %}
-<h1>Metals Prices</h1>
-<div id="metals">
-    <p>Loading...</p>
-</div>
-<script>
-    async function fetchMetals() {
-        const response = await fetch('/get-metals');
-        const data = await response.json();
-        if (data.error) {
-            document.getElementById('metals').innerText = `Error: ${data.error}`;
-        } else {
-            document.getElementById('metals').innerHTML = `
-                <p><strong>Gold (XAU):</strong> ${data.XAU}</p>
-                <p><strong>Silver (XAG):</strong> ${data.XAG}</p>
-            `;
-        }
-    }
-    fetchMetals();
-</script>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metals Prices</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Metals Prices</h1>
+    </header>
+    <main>
+        <p>Welcome to the metals prices page. Here you can find information about gold, silver, and other precious metals.</p>
+        <ul>
+            <li>Gold: $1,920 per ounce</li>
+            <li>Silver: $24.50 per ounce</li>
+            <li>Platinum: $930 per ounce</li>
+        </ul>
+    </main>
+    <footer>
+        <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+    </footer>
+</body>
+</html>
 
