@@ -89,10 +89,10 @@ def stocks():
     stocks_data = fetch_stock_data()
     return render_template("stocks.html", stocks=stocks_data)
 
-@app.route("/currencies")
-def currencies():
+@app.route("/currency")
+def currency():
     currencies_data = fetch_currency_data()
-    return render_template("currencies.html", currencies=currencies_data)
+    return render_template("currency.html", currency=currencies_data)
 
 # Run the app
 if __name__ == "__main__":
