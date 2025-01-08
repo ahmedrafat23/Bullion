@@ -10,13 +10,13 @@ load_dotenv()
 app = Flask(__name__)
 
 # API Keys and URLs from environment variables
-METALS_API_KEY = os.getenv("METALS_API_KEY")
-STOCKS_API_KEY = os.getenv("STOCKS_API_KEY")
-FINANCE_API_KEY = os.getenv("FINANCE_API_KEY")
+METALS_API_KEY = os.getenv("pyiiy79876q2i7vy6fm25b7a3az93o1q7vdm2vfcm7ztq1cyq6o38ljwr71b")
+STOCKS_API_KEY = os.getenv("D6FV8SVY5J6IXGPL")
+FINANCE_API_KEY = os.getenv("38c447983bd3ecd109c9586bb0a702a1")
 
-METALS_URL = f'https://metals-api.com/api/latest?access_key={METALS_API_KEY}'
-STOCKS_URL = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey={STOCKS_API_KEY}'
-FINANCE_URL = f'https://api.currencylayer.com/live?access_key={FINANCE_API_KEY}'
+METALS_URL = f'https://metals-api.com/api/latest?access_key=pyiiy79876q2i7vy6fm25b7a3az93o1q7vdm2vfcm7ztq1cyq6o38ljwr71b'
+STOCKS_URL = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=D6FV8SVY5J6IXGPL'
+FINANCE_URL = f'https://api.currencylayer.com/live?access_key=38c447983bd3ecd109c9586bb0a702a1'
 
 # Fetch and process metals data
 def fetch_metal_data():
