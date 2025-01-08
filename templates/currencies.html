@@ -1,18 +1,25 @@
-{% extends "base.html" %}
-
-{% block content %}
-<h1>Currencies Exchange Rates</h1>
-<div id="currencies-data">
-    <!-- JavaScript will populate this section with live data -->
-</div>
-<script>
-    fetch('/get-currencies')
-        .then(response => response.json())
-        .then(data => {
-            const currenciesDiv = document.getElementById('currencies-data');
-            currenciesDiv.innerHTML = JSON.stringify(data, null, 2);
-        })
-        .catch(error => console.error('Error fetching currencies data:', error));
-</script>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Currency Exchange Rates</h1>
+        <p>Stay updated with the latest rates</p>
+    </header>
+    <main>
+        <section class="section">
+            <p>Currency exchange rate data will go here.</p>
+        </section>
+        <a href="{{ url_for('home') }}">Back to Home</a>
+    </main>
+    <footer>
+        <p>&copy; 2025 Bullion. All rights reserved.</p>
+    </footer>
+</body>
+</html>
 

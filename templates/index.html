@@ -3,84 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bullion</title>
+    <title>Bullion Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1.5rem 0;
-            text-align: center;
-        }
-        main {
-            padding: 2rem;
-        }
-        .section {
-            margin: 2rem 0;
-        }
-        .card {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 1rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-        }
-        footer {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-        a {
-            color: #4CAF50;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <h1>Bullion</h1>
-        <p>Your gateway to real-time financial market insights.</p>
+        <h1>Welcome to Bullion</h1>
+        <p>Your gateway to market insights</p>
     </header>
     <main>
-        <div class="section">
-            <h2>Welcome to Bullion</h2>
-            <p>Stay updated with live market data, including gold prices, stock indices, and currency exchange rates.</p>
-        </div>
-        <div class="section">
-            <h2>Latest Market Updates</h2>
-            <div class="card">
-                <p><strong>Gold Price:</strong> {{ gold_price }}</p>
-                <p><strong>Stock Market Index:</strong> {{ stock_index }}</p>
-                <p><strong>Exchange Rate (USD to EUR):</strong> {{ exchange_rate }}</p>
-            </div>
-        </div>
-        <div class="section">
-            <h2>Features</h2>
+        <section class="section">
+            <h2>Explore</h2>
             <ul>
-                <li>Real-time updates for gold and stock prices</li>
-                <li>Currency exchange rate monitoring</li>
-                <li>Insights into historical data trends</li>
+		<li><a href="{{ url_for('metals_page') }}">Metals Prices</a></li>
+                <li><a href="{{ url_for('stocks_page') }}">Stock Market</a></li>
+                <li><a href="{{ url_for('currency_page') }}">Currency Exchange Rates</a></li>
             </ul>
-        </div>
-        <div class="section">
-            <h2>About Us</h2>
-            <p>Bullion is a financial analytics platform designed to bring critical market information directly to you in real time.</p>
-        </div>
+        </section>
     </main>
     <footer>
         <p>&copy; 2025 Bullion. All rights reserved.</p>
-        <a href="/contact">Contact Us</a>
     </footer>
 </body>
 </html>

@@ -1,18 +1,25 @@
-{% extends "base.html" %}
-
-{% block content %}
-<h1>Stock Prices</h1>
-<div id="stocks-data">
-    <!-- JavaScript will populate this section with live data -->
-</div>
-<script>
-    fetch('/get-stocks')
-        .then(response => response.json())
-        .then(data => {
-            const stocksDiv = document.getElementById('stocks-data');
-            stocksDiv.innerHTML = JSON.stringify(data, null, 2);
-        })
-        .catch(error => console.error('Error fetching stocks data:', error));
-</script>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Stock Market</h1>
+        <p>Latest stock market updates</p>
+    </header>
+    <main>
+        <section class="section">
+            <p>Stock market data will go here.</p>
+        </section>
+        <a href="{{ url_for('home') }}">Back to Home</a>
+    </main>
+    <footer>
+        <p>&copy; 2025 Bullion. All rights reserved.</p>
+    </footer>
+</body>
+</html>
 
