@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Initialize Flask app
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 # API Keys and URLs from environment variables
 METALS_API_KEY = os.getenv("pyiiy79876q2i7vy6fm25b7a3az93o1q7vdm2vfcm7ztq1cyq6o38ljwr71b")
