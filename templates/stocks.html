@@ -1,25 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Market</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Stock Market Overview</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
-        <h1>Stock Market</h1>
-        <p>Latest stock market updates</p>
+        <div class="container">
+            <h1>Bullion - Stock Market Overview</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/currency">Currency</a></li>
+                    <li><a href="/stocks" class="active">Stocks</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
-        <section class="section">
-            <p>Stock market data will go here.</p>
-        </section>
-        <a href="{{ url_for('home') }}">Back to Home</a>
-    </main>
-    <footer>
-        <p>&copy; 2025 Bullion. All rights reserved.</p>
-    </footer>
-</body>
-</html>
 
+    <main>
+        <div class="container">
+            <h2>Stocks Overview</h2>
+            <p>View real-time stock market data and analyze trends.</p>
+
+            <!-- Search bar -->
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Search for stocks..." oninput="filterStocks()">
+            </div>
+
+            <!-- Table to display stock data -->
+            <table id="stocks-table">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Company Name</th>
+                        <th>Price</th>
+                        <th>Change</th>
+                        <th>Volume</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example of dynamic content rendering using Flask -->
+                    {% for stock in stocks %}
+                    <tr>
+                        <td>{{ stock.symbol }}</td>
+                        <td>{{ stock.company_name }}</td>
+                        <td>${{ stock.price }}</td>
+                        <td class="{{ 'positive' if stock.change >= 0 else 'negative' }}">
+                            {{ stock.change }}%
+                        </td>
+                        <td>{{ stock.volume | int }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Bullion. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript function to filter stocks in the table
+        function filterStocks() {
+            const input = document.getElementById('search');
+            const filter = input.value.toLowerCase();
+            const rows = document.querySelectorAll('#stocks-table tbody tr');
+
+            rows.forEach(row => {
+                const cells = row.getElementsByTagName('td');
+                const symbol = cells[0].textContent.toLowerCase();
+                const name = cells[1].textContent.toLowerCase();
+
+                if (symbol.includes(filter) || name.includes(filter)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
