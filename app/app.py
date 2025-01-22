@@ -85,9 +85,16 @@ def metals():
     return render_template("metals.html", metals=metals_data)
 
 @app.route("/stocks")
-def stocks():
-    stocks_data = fetch_stock_data()
-    return render_template("stocks.html", stocks=stocks_data)
+def fetch_stock_data():
+    try:
+        # Example: Simulate an API call to fetch stock data
+        response = requests.get("https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=D6FV8SVY5J6IXGPL")
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        return response.json()  # Assuming the API returns JSON
+    except requests.RequestException as e:
+        # Log the error and return a default value
+        print(f"Error fetching stock data: {e}")
+        return []
 
 @app.route("/currency")
 def currency():
