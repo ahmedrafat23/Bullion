@@ -52,12 +52,11 @@ Bullion is a web-based platform designed to simplify financial market tracking b
 1. Clone the repository:  
    ```bash
    git clone https://github.com/ahmedrafat23/Bullion.git
-   cd bullion
-
-
-![2024-12-30](https://github.com/user-attachments/assets/e815279f-8627-4db2-85b3-d2635f0c6819)
+   cd Bullion
 
 https://ahmedrafat23.github.io/Bullion/
+
+![2024-12-30](https://github.com/user-attachments/assets/e815279f-8627-4db2-85b3-d2635f0c6819)
 
 ![2024-09-20](https://github.com/user-attachments/assets/520b82f4-69e9-44ae-bfee-ed01a734ffaa)
 
